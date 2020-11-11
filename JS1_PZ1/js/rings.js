@@ -9,8 +9,8 @@ let stage = new Konva.Stage({
 
 let layer = new Konva.Layer
 
-for (let i = 0; i < 20; i++) {
-    let radius = Math.random() * 100;
+for (let i = 0; i < 1000; i++) {
+    let radius = Math.random();
     let x = radius + (Math.random() * (width - (2 * radius)));
     let y = radius + (Math.random() * (height - (2 * radius)));
     let color = randomColor();
@@ -19,14 +19,13 @@ for (let i = 0; i < 20; i++) {
     let ring = new Konva.Ring({
         x: x,
         y: y,
-        innerRadius: 40,
-        outerRadius: 70,
+        innerRadius: Math.random() * 100,
+        outerRadius: Math.random() * 100,
         fill: color,
         strokeWidth: 4,
     });
 
     layer.add(ring);
-    
 }
 
 function randomColor() {
